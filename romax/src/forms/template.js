@@ -22,7 +22,10 @@ function Template() {
         try {
             const response = await fetch('http://localhost:5050/register', {
                 method: 'POST',
-                body: JSON.stringify({formData})
+                headers: {
+            'Content-Type': 'application/json'
+          },
+                body: JSON.stringify(formData)
                 });
 
         if (!response.ok) {
