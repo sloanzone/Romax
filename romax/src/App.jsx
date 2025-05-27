@@ -5,7 +5,9 @@ import Template from "./forms/template.js"
 
 function App() {
 
-    const [authData, setAuthData] = useState(null);
+    const [authData, setAuthData] = useState({
+      credential: ''
+    });
 
      const gContainer = {
        display: 'flex',
