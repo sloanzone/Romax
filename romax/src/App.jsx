@@ -17,7 +17,6 @@ function App() {
      };
 
     const handleGoogle = async (e) => {
-      e.preventDefault();
       console.log('Auth Data', authData)
 
       try {
