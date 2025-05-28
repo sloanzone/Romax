@@ -1,5 +1,6 @@
 const User = require('../../model/user')
 const {newUser, checkUser, checkProduct, addProduct} = require('../../services/auth/register')
+const {sendWelecomeMail} = require('../mail')
 
 const register = async(req, res) =>{
     try{
@@ -33,6 +34,7 @@ const register = async(req, res) =>{
     if(!createUser){
      return res.status(400).json({data: 'operation failed'})
     }
+    sendWelecomeMail(email, name)
    res.status(200).json({data: 'success'})
 }
 catch(error){
